@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  website :
+    build : ./website
+    container_name : website_c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./website:/app
+      - /app/node_modules #chokida pooling
+    stdin_open : true # reacttive mode for react
+    tty : true
